@@ -383,22 +383,23 @@ img { display: block; max-width: 100%; }
   transform: rotate(-45deg) translate(5px, -5px);
 }
 
-@media (max-width: 900px) {
+@media (max-width: 1024px) {
   .nav-burger { display: flex; }
 
   .nav-menu {
     position: fixed;
     top: 0;
     right: -100%;
-    width: min(320px, 80%);
+    width: min(320px, 85%);
     height: 100vh;
+    overflow-y: auto;
     background: var(--glass-bg-strong);
     backdrop-filter: blur(24px);
     -webkit-backdrop-filter: blur(24px);
     border-left: 1px solid var(--glass-border);
     flex-direction: column;
     align-items: stretch;
-    padding: 100px 32px 32px;
+    padding: 90px 24px 32px;
     gap: 4px;
     transition: right var(--transition-slow);
     z-index: 999;
@@ -409,8 +410,8 @@ img { display: block; max-width: 100%; }
   }
 
   .nav-link {
-    font-size: 16px;
-    padding: 14px 16px;
+    font-size: 15px;
+    padding: 12px 16px;
     border-radius: var(--radius-sm);
   }
 
@@ -1590,8 +1591,18 @@ img { display: block; max-width: 100%; }
 ======================== */
 .certifications-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 24px;
+}
+
+@media (max-width: 550px) {
+  .certifications-grid {
+    grid-template-columns: 1fr;
+  }
+  .cert-card {
+    flex-direction: column;
+    padding: 20px;
+  }
 }
 
 .cert-card {
@@ -1881,4 +1892,103 @@ img { display: block; max-width: 100%; }
   font-size: 12px;
   color: var(--text-secondary);
   line-height: 1.5;
+}
+
+/* ========================
+   GOOGLE STUDENT AMBASSADOR STYLES
+======================== */
+.hero-badge-google {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 14px;
+  background: rgba(66, 133, 244, 0.12);
+  border: 1px solid rgba(66, 133, 244, 0.35);
+  border-radius: 20px;
+  font-family: var(--font-mono);
+  font-size: 12px;
+  font-weight: 600;
+  color: #60a5fa;
+  letter-spacing: 0.08em;
+  margin-bottom: 16px;
+  width: fit-content;
+  box-shadow: 0 0 20px rgba(66, 133, 244, 0.15);
+  opacity: 0;
+  animation: heroFadeUp 0.6s 0.1s ease forwards;
+}
+
+.hero-badge-google i {
+  color: #ea4335;
+  font-size: 14px;
+}
+
+.journey-step-icon.google {
+  background: rgba(66, 133, 244, 0.15);
+  color: #4285f4;
+  border: 1px solid rgba(66, 133, 244, 0.4);
+  box-shadow: 0 0 15px rgba(66, 133, 244, 0.2);
+}
+
+.journey-step.google-step {
+  border: 1px solid rgba(66, 133, 244, 0.25);
+  background: rgba(66, 133, 244, 0.04);
+}
+
+.cert-card-google {
+  border: 1.5px solid rgba(66, 133, 244, 0.4) !important;
+  background: linear-gradient(135deg, rgba(66, 133, 244, 0.08) 0%, rgba(13, 18, 32, 0.95) 100%) !important;
+  box-shadow: 0 8px 32px rgba(66, 133, 244, 0.15);
+  position: relative;
+}
+
+.cert-card-google::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, #4285f4, #ea4335, #fbbc05, #34a853);
+  border-radius: var(--radius) var(--radius) 0 0;
+}
+
+.cert-badge-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 11px;
+  font-weight: 600;
+  font-family: var(--font-mono);
+  color: #fbbc05;
+  background: rgba(251, 188, 5, 0.12);
+  border: 1px solid rgba(251, 188, 5, 0.3);
+  padding: 3px 10px;
+  border-radius: 12px;
+  margin-bottom: 8px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.cert-icon.google-icon {
+  background: rgba(66, 133, 244, 0.15);
+  color: #4285f4;
+  border: 1px solid rgba(66, 133, 244, 0.3);
+}
+
+.active-badge {
+  color: #34a853 !important;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.google-marker {
+  background: linear-gradient(135deg, #4285f4, #34a853) !important;
+  box-shadow: 0 0 15px rgba(66, 133, 244, 0.4) !important;
+}
+
+.google-timeline-card {
+  border-left: 2px solid #4285f4 !important;
+  background: rgba(66, 133, 244, 0.05) !important;
 }
